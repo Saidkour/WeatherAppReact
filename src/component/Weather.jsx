@@ -62,7 +62,7 @@ export default function Weather() {
             </div>
             <div className='lg:max-w-[50%] lg:ml-[150px] xl:ml-[250px] md:my-auto max-w-[100%]'>
               <div className='block md:flex justify-center max-w-[100%]'>
-                <div className='flex mb-2 sm:mb-0 justify-center'>
+                <div className='flex mb-2 md:mb-0 justify-center'>
                   <div className='border flex flex-col justify-center rounded p-3 ml-4 sm:w-[100px] w-[75px] sm:h-[100px] h-[75px]  '>
                     <h6 className='flex justify-center'>
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-sunrise" viewBox="0 0 16 16">
@@ -78,7 +78,7 @@ export default function Weather() {
                     <p className='font-medium text-semi-gray sm:text-[18] text-[16px] '>{formatdate(datat.sunset)}</p>
                   </div>
                 </div>
-                <div className='flex mb-2 sm:mb-0 justify-center'>
+                <div className='flex mb-2 md:mb-0 justify-center'>
                   <div className='border flex flex-col justify-center rounded  ml-4 sm:w-[100px] w-[75px] sm:h-[100px] h-[75px]  '>
                     <h6 className='flex justify-center'>
                       <img className='max-w-none' src="img/pressure.svg" alt="pressure" />
@@ -92,7 +92,7 @@ export default function Weather() {
                     <p className='font-medium text-semi-gray sm:text-[18px] text-[16px] '>{datat.cloud} %</p>
                   </div>
                 </div>
-                <div className='flex mb-2 sm:mb-0 justify-center'>
+                <div className='flex mb-2 md:mb-0 justify-center'>
                   <div className='border flex flex-col justify-center rounded p-3 ml-4 sm:w-[100px] w-[75px] sm:h-[100px] h-[75px]  '>
                     <h6 className='flex justify-center'>
                       <img src="img/humidity.svg" alt="humidity" />
