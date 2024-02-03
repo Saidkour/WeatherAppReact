@@ -1,6 +1,6 @@
 import { Autocomplete, TextField } from "@mui/material";
 import { useEffect, useRef, useState } from "react"
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 export default function Search() {
   const searchFiled = useRef()
@@ -19,8 +19,7 @@ export default function Search() {
         })
         .then((json) => {
           console.log("Successfuly got data", json);
-          const { clouds,dt, main, name, sys, weather, wind } = json
-          console.log([main.temp, main.pressure, main.humidity, clouds.all, name, sys.country, weather[0].main])
+          const { clouds, dt, main, name, sys, weather, wind } = json
           dispatch({
             type: "adddataweather",
             payload: {
@@ -33,14 +32,15 @@ export default function Search() {
               wind,
             },
           });
-          dispatch({ type: "loading", payload: false })
         })
         .catch(error => {
           console.error("Error fetching data:", error);
-        });
+        })
+        .finally(() => dispatch({ type: "loading", payload: false }))
+
     }
-    catch(error){
-        console.error("Error in try block:", error); 
+    catch (error) {
+      console.error("Error in try block:", error);
     }
   }
 
